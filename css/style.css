@@ -1,17 +1,140 @@
+/*Remove Arrows/Spinners*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 /************************************** DESKTOP VIEW ****************************************/
-body{
-    background: #F7F7F7;
-    font-family: Tahoma , sans-serif;
+body {
+    background: #0E0E0E;
+    font-family: "Arial Black", sans-serif;
     color: #333;
     text-align: center;
+    font-weight: bold;
 }
-.wrapper{
 
+.wrapper {
+    background: #F7F7F7;
+    margin: 0 auto;
+    max-width: 665px;
+    height: 100vh;
+    box-shadow: 5px 0 13px -5px #FFFFFF,
+    -5px 0 13px -5px #FFFFFF;
 }
-.title{
+.inner-wrapper{
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 353px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.title {
+    font-size: 25px;
+    padding: 25px 0;
+}
+/************ BALANCE ************/
+#balance-box{
+    text-align: left;
+}
+#balance-box h1{
+    font-size: 30px;
+}
+#income-expense-box{
+    border-radius: 2px;
+    height: 94px;
+    background: #FFFFFF;
+    width: 100%;
+    margin:20px auto;
+    box-shadow: 5px 0 13px -5px #333333,
+    -5px 0 13px -5px #333333;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+#income-expense-box div{
+    width: 100%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+#income-expense-box #income-box{
+    position: relative;
+}
+#income-box:after{
+    content: "";
+    background: #a9a9a9;
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    right: 0;
+}
+.green{
+    color: #0BE081;
+}
+.red{
+    color:#CB2715;
+}
+/************ HISTORY ************/
+.inner-wrapper #history-box{
+    text-align: center;
+}
+.history-row{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+.pad{
+    padding: 0 6px;
+}
+/************ ADD TRANSACTION ************/
+#transaction,#history{
+    text-align: left;
+    font-size: 20px;
+    cursor: pointer;
+}
+.separator{
+    border: 0;
+    height: 1px;
+    background: #333 linear-gradient(to right, #ccc, #333, #ccc);
+}
+form[name="transaction"],#history-box{
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+    text-align: left;
+    font-family: Arial, serif;
+}
+form[name="transaction"] input{
+    border-radius:2px;
+    padding: 5px;
+    border:1px solid #00333333;
+}
+form[name="transaction"] input[name="transaction_title"]{
+    margin-bottom: 10px;
+}
+form[name="transaction"] input[name="add_btn"]{
+    background: #A850FF;
+    color: #FFFFFF;
+}
+form[name="transaction"] input[name="add_btn"]:hover{
+    box-shadow: 5px 0 13px -5px #333333,
+    -5px 0 13px -5px #333333;
+}
+form[name="transaction"] input[name="add_btn"]:active{
+    transform: translateY(10px);
+}
 
-}
 /************************************** MOBILE VIEW *****************************************/
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
 
 }

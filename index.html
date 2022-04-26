@@ -4,15 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Expense Tracker</title>
-    <link rel="icon" type="image/png" href="images/carousel.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/cssReset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
 <body>
 <section class="wrapper">
-    <h1 class="title">Expense Tracker</h1>
-
+    <div class="inner-wrapper">
+        <h1 class="title">Expense Tracker</h1>
+        <div id="balance-box">
+            <h2>YOUR BALANCE</h2>
+            <h1>$<span id="total-balance">0.00</span></h1>
+            <div id="income-expense-box">
+                <div id="income-box">
+                    <h2>INCOME</h2>
+                    <h2 class="green">$<span id="total-income">0.00</span></h2>
+                </div>
+                <div id="expense-box">
+                    <h2>EXPENSE</h2>
+                    <h2 class="red">$<span id="total-expense">0.00</span></h2>
+                </div>
+            </div>
+        </div>
+        <div id="history">
+            History
+            <hr class="separator">
+        </div>
+        <div id="history-box"></div>
+        <div id="transaction">
+            Add new transaction
+            <hr class="separator">
+        </div>
+        <form name="transaction">
+            <label>Text</label>
+            <input type="text" name="transaction_title" maxlength="45" placeholder="Enter text..." required>
+            <label>Amount<br>(negative - expense, positive - income)</label>
+            <input type="number" name="transaction_amount" placeholder="Enter amount..." required>
+            <input type="submit" name="add_btn" value="Add transaction">
+        </form>
+    </div>
 </section>
 </body>
 </html>
