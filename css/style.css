@@ -1,0 +1,17 @@
+/************************************** DESKTOP VIEW ****************************************/
+body{
+    background: #F7F7F7;
+    font-family: Tahoma , sans-serif;
+    color: #333;
+    text-align: center;
+}
+.wrapper{
+
+}
+.title{
+
+}
+/************************************** MOBILE VIEW *****************************************/
+@media only screen and (max-width: 600px){
+
+}
