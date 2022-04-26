@@ -136,5 +136,7 @@ form[name="transaction"] input[name="add_btn"]:active{
 
 /************************************** MOBILE VIEW *****************************************/
 @media only screen and (max-width: 600px) {
-
+    .inner-wrapper{
+        padding: 20px 20px;
+    }
 }
