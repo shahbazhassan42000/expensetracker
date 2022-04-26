@@ -14,30 +14,39 @@ document.addEventListener("DOMContentLoaded", function () {
     add_btn.addEventListener("click", function (event) {
         event.preventDefault()
         let transaction_amount = +(amount.value);
-        let row = []
-        row.push(title.value); /*** ADDING TRANSACTION TITLE IN HISTORY ***/
-        if (transaction_amount > 0) {
-            /*** ADDING IN INCOME ***/
-            total_income.innerText = ((+total_income.innerText) + transaction_amount).toString();
-            /*** ADDING TRANSACTION TYPE IN HISTORY ***/
-            row.push("INCOME");
-        } else {
-            /*** ADDING IN EXPENSE ***/
-            total_expense.innerText = ((+total_expense.innerText) + transaction_amount).toString();
-            /*** ADDING TRANSACTION TYPE IN HISTORY ***/
-            row.push("EXPENSE");
+        if(transaction_amount===0){
+            alert("ERROR!!! zero amount is entered");
+            /*** CLEARING FORM FIELDS ***/
+            amount.value="";
+            title.value="";
         }
-        /*** ADDING TRANSACTION AMOUNT IN HISTORY ***/
-        row.push(transaction_amount);
-        /*** UPDATING TOTAL BALANCE ***/
-        total_balance.innerText = ((+total_income.innerText) + (+total_expense.innerText)).toString();
-        /*** CLEARING FORM FIELDS ***/
-        amount.value="";
-        title.value="";
-        alert("Transaction added successfully");
-        /*** ADDING TRANSACTION IN HISTORY ***/
-        records.push(row);
-        insert_transaction_record(row);
+        else{
+            let row = []
+            row.push(title.value); /*** ADDING TRANSACTION TITLE IN HISTORY ***/
+
+            if (transaction_amount > 0) {
+                /*** ADDING IN INCOME ***/
+                total_income.innerText = ((+total_income.innerText) + transaction_amount).toString();
+                /*** ADDING TRANSACTION TYPE IN HISTORY ***/
+                row.push("INCOME");
+            } else {
+                /*** ADDING IN EXPENSE ***/
+                total_expense.innerText = ((+total_expense.innerText) + transaction_amount).toString();
+                /*** ADDING TRANSACTION TYPE IN HISTORY ***/
+                row.push("EXPENSE");
+            }
+            /*** ADDING TRANSACTION AMOUNT IN HISTORY ***/
+            row.push(transaction_amount);
+            /*** UPDATING TOTAL BALANCE ***/
+            total_balance.innerText = ((+total_income.innerText) + (+total_expense.innerText)).toString();
+            /*** CLEARING FORM FIELDS ***/
+            amount.value="";
+            title.value="";
+            alert("Transaction added successfully");
+            /*** ADDING TRANSACTION IN HISTORY ***/
+            records.push(row);
+            insert_transaction_record(row);
+        }
     });
 
     /*** TOGGLING TRANSACTION AND HISTORY BOXES ***/
